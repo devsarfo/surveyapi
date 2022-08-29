@@ -1,5 +1,5 @@
 import express from  'express';
-import { body, validationResult } from 'express-validator';
+import { body } from 'express-validator';
 import { index, get, store, destroy, update, answer, results } from '../controllers/survey.controller';
 import Validation from '../middlewares/validation.middleware';
 

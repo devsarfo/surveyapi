@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import Guid from '../models/guid.model';
 import { Survey } from './../models/survey.model';
 
+//In-memory persist
 let surveys: Survey[] = [];
 let responses: Answer[] = [];
 
@@ -46,8 +47,7 @@ export default class SurveyService {
             return {status: 'success', data: survey};
         } catch(error: any) {
             return {status: 'error', message: error.message};
-        }
-        
+        }   
     }
     
     public static update(id: string, data: Survey) : Result

@@ -1,6 +1,6 @@
 import { Express, Request, Response } from "express";
 import { body, validationResult } from 'express-validator';
-import survey from './survey.route';
+import surveyRoute from './survey.route';
 
 export default function (app: Express) {
   // Status
@@ -10,5 +10,5 @@ export default function (app: Express) {
   }));
 
   // Survey
-  app.use('/survey', survey);
+  app.use('/survey', surveyRoute);
 }
