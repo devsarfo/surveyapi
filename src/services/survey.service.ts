@@ -5,41 +5,7 @@ import dayjs from "dayjs";
 import Guid from '../models/guid.model';
 import { Survey } from './../models/survey.model';
 
-let surveys: Survey[] = [
-    {
-        "id": "114cbb63-84dd-437e-9f9f-add560186438",
-        "title": "Survey 1",
-        "questions": [
-            {
-                "id": "d42813bd-2e1c-494a-90c9-8b122d06366c",
-                "question": "What is your favorite country?",
-                "answers": [
-                    "Germany",
-                    "Ghana",
-                    "USA"
-                ]
-            },
-            {
-                "id": "145df87c-d68a-4dff-a464-c07299ddf73a",
-                "question": "What is your favorite football club?",
-                "answers": [
-                    "Chelsea",
-                    "Manchester United"
-                ]
-            },
-            {
-                "id": "73d6b3c9-972d-48ae-bed4-3cfd74703fa9",
-                "question": "Do you want to confirm answers?",
-                "answers": [
-                    "Yes",
-                    "No",
-                    "Maybe"
-                ]
-            }
-        ],
-        "createdAt": dayjs().format('YYYY-MM-DD HH:mm:ss')
-    }
-];
+let surveys: Survey[] = [];
 let responses: Answer[] = [];
 
 export default class SurveyService {
