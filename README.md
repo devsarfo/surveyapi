@@ -1,5 +1,3 @@
-<p align="center"><a href="https://devsarfo.io" target="_blank"><img src="https://devsarfo.io/assets/images/myphoto.jpg" width="250"></a></p>
-
 # Survey API 
 RESTful API with Node.js, Express &amp; TypeScript
 
@@ -58,7 +56,7 @@ Endpoint: **POST  /survey**
 
 The API handles validation to ensure that
 - Title is required
-- At least question is required
+- At least question is provided
 - 2 or more possible answers to choose from
 
 The payload should be in json as shown below
@@ -224,7 +222,7 @@ Endpoint: **GET /survey**
 
 ####  Get Survey By Id
 
-Endpoint: **GET /survey/:id**
+Endpoint: **GET /survey/{id}**
 
 **Success Response**
 ``` json
@@ -279,11 +277,11 @@ Endpoint: **GET /survey/:id**
 
 ####  Update Survey By Id
 
-Endpoint: **PATCH /survey/:id**
+Endpoint: **PATCH /survey/{id}**
 
 The API handles validation to ensure that
 - Title is required
-- At least question is required
+- At least question is provided
 - 2 or more possible answers to choose from
 
 The payload should be in json as shown below
@@ -345,7 +343,7 @@ The payload should be in json as shown below
 
 ####  Delete Survey By Id
 
-Endpoint: **DELETE /survey/:id**
+Endpoint: **DELETE /survey/{id}**
 
 **Success Response**
 ``` json
@@ -368,7 +366,7 @@ Endpoint: **DELETE /survey/:id**
 
 ####  Answer Survey By Id
 
-Endpoint: **POST /survey/:id/answer**
+Endpoint: **POST /survey/{id}/answer**
 
 The API handles validation to ensure that
 - Survey Id is required
@@ -469,7 +467,7 @@ The payload should be in json as shown below
 
 ####  Get Survey Results By Id
 
-Endpoint: **GET /survey/:id/results**
+Endpoint: **GET /survey/{id}/results**
 
 **Success Response**
 ``` json
