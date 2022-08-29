@@ -5,7 +5,41 @@ import dayjs from "dayjs";
 import Guid from '../models/guid.model';
 import { Survey } from './../models/survey.model';
 
-let surveys: Survey[] = [];
+let surveys: Survey[] = [
+    {
+        "id": "114cbb63-84dd-437e-9f9f-add560186438",
+        "title": "Survey 1",
+        "questions": [
+            {
+                "id": "d42813bd-2e1c-494a-90c9-8b122d06366c",
+                "question": "What is your favorite country?",
+                "answers": [
+                    "Germany",
+                    "Ghana",
+                    "USA"
+                ]
+            },
+            {
+                "id": "145df87c-d68a-4dff-a464-c07299ddf73a",
+                "question": "What is your favorite football club?",
+                "answers": [
+                    "Chelsea",
+                    "Manchester United"
+                ]
+            },
+            {
+                "id": "73d6b3c9-972d-48ae-bed4-3cfd74703fa9",
+                "question": "Do you want to confirm answers?",
+                "answers": [
+                    "Yes",
+                    "No",
+                    "Maybe"
+                ]
+            }
+        ],
+        "createdAt": dayjs().format('YYYY-MM-DD HH:mm:ss')
+    }
+];
 let responses: Answer[] = [];
 
 export default class SurveyService {
@@ -105,8 +139,9 @@ export default class SurveyService {
             //Save Answers
             let answers: any = [];
             data.answers.forEach(answer => {
+                
                 //Verify that question exists and answer is part of options
-                const question = survey!.questions.find((question) => question.id = answer.questionId);
+                const question = survey!.questions.find((question) => question.id === answer.questionId);
                 if(!question)
                 {
                     throw new Error("Invalid Question Id: " + answer.questionId);
@@ -120,8 +155,9 @@ export default class SurveyService {
                     questionId: answer.questionId,
                     answer: answer.answer
                 });
+
             });
-            
+
             //Save Response
             const answer: Answer = {
                 id: Guid.generate(),
@@ -160,8 +196,7 @@ export default class SurveyService {
                     question.answers.forEach(answer => {
                         const count = answers.filter((x) => x.answer == answer).length;
                         result.push({
-                            option: answer,
-                            count: count
+                            [answer]: count
                         });
                     });
 
@@ -172,7 +207,6 @@ export default class SurveyService {
 
                 });
             }
-            
             
             return {status: 'success', data: results};
 
