@@ -1,4 +1,4 @@
-<p align="center"><a href="https://devsarfo.io" target="_blank"><img src="https://devsarfo.io/assets/images/photo.png" width="250"></a></p>
+<p align="center"><a href="https://devsarfo.io" target="_blank"><img src="https://devsarfo.io/assets/images/myphoto.jpg" width="250"></a></p>
 
 # Survey API 
 RESTful API with Node.js, Express &amp; TypeScript
