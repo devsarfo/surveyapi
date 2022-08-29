@@ -3,7 +3,6 @@ export default class Validation {
 
     public static async question(questions: Question[]) 
     {
-
         if(!Array.isArray(questions) || questions.length < 1)
         {
             return Promise.reject('requires 1 or more questions in array');
@@ -20,5 +19,4 @@ export default class Validation {
             if(error.length) return Promise.reject(error);
         }
     }
-
 }
